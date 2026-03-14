@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"uri": "vscode-vfs://github/Oizon/WarriorServe-docs"
+		},
+		{
+			"name": "WarriorServe-docs",
+			"path": "WarriorServe-Docs/WarriorServe-docs"
+		}
+	],
+	"settings": {}
+}
