@@ -44,6 +44,15 @@ Before installing WarriorServe®, complete the following steps to ensure the pac
     - Install `WarriorServe`
     - adjust URL to the following: `https://login.salesforce.com/packaging/installPackage.apexp?p0=XXXXXXXXXXXX`
 
+### 🏛️ Architecture
+
+  - WarriorServe extends core Salesforce objects including:
+
+    - Contact
+    - Account
+    - Case
+
+Additional custom objects manage referrals, service history, and program metrics.
 ### 📦 Core Objects
 
 #### `Case Referral` (Custom Object)
@@ -263,6 +272,244 @@ WarriorServe® includes **modular settings components** to configure system beha
 ---
 
 More features and configuration options will be appended as additional parts of the WarriorServe system are documented and implemented.
+
+---
+
+### ✅ Supported Package Components
+
+- Applications
+  - WarriorServe
+  - WarriorServe Settings and Tools
+- Permission Sets
+  - WarriorServe Administrator
+  - WarriorServe User
+- Custom Metadata
+  - WarriorServeAPISettings (VAFacilitiesAPI, Veteran_Confirmation_API)
+- Remote Site Settings
+  - VeteransAffairsAPI
+- Tabs
+  - Settings Home
+  - Condition Rating
+  - Error
+  - Metric
+- Flexipages
+  - Home_Page_Default
+  - SettingsHome
+  - WarriorServeContactPage
+  - Case_Record_Page
+  - Service_Record_Record_Page
+  - Education_Record_Page
+  - Employment_Record_Page
+  - Injury_Record_Page
+  - Support_Action_Record_Page
+  - WarriorServe_UtilityBar
+  - WarriorServe_Settings_And_Tools_UtilityBar
+- Flows
+  - Record_Trigger_Service_Record_Before_Save
+  - Schedule_Trigger_Partner_Rating
+  - Screen_Flow_HUD_Homeless
+- LWCs
+  - basicSettingManager
+  - advancedSettingsManager
+  - aboutSettingManager
+  - contactDataIntegrity
+  - contactQuickView
+  - contactTimeline
+  - nearbyVAFacilitiesMap
+- Apex (Core)
+  - CaseTriggerHandler, ContactTriggerHandler, CaseReferralTriggerHandler, ConditionRatingTriggerHandler, SupportActionTriggerHandler
+  - VAFacilitiesService, VeteranConfirmationStatus, EventLogUtility, HandleException, MetricsGenerator, SettingsManagerController, CollectionUtils, PostInstall
+- Apex (Test/Mocks)
+  - Comprehensive test classes and HttpCalloutMock implementations
+
+---
+
+### 🔐 Permission Sets
+
+Assign these to users after install:
+
+- WarriorServe Administrator
+  - Full access to Settings Home and related tabs (Settings Home, Error, Metric, Condition Rating)
+  - Manage Basic/Advanced Settings components
+  - Required CRUD/FLS on custom objects used by configuration
+- WarriorServe User
+  - Operational access for case workers
+  - Access to Contact/Case and related custom objects needed by automations (ServiceRecord__c, CaseReferral__c, SupportAction__c, etc.)
+  - Visibility for LWCs embedded on Lightning pages (Quick View, Timeline, Data Integrity)
+
+Note: Validate OWD and Profile tab visibility so utility bars and record pages appear as intended.
+
+---
+
+### 🌐 External Integrations
+
+- Remote Site Settings
+  - VeteransAffairsAPI — must be enabled to allow outbound VA callouts
+- Custom Metadata: WarriorServeAPISettings
+  - VAFacilitiesAPI — endpoint/key config for VA Facilities search
+  - Veteran_Confirmation_API — endpoint/key config for veteran status confirmation
+
+Update these records post-install before enabling related features in Advanced Settings.
+
+---
+
+### 🧩 Lightning Pages & Utility Bars
+
+- Utility Bars
+  - WarriorServe_UtilityBar — end-user quick tools
+  - WarriorServe_Settings_And_Tools_UtilityBar — admin tools
+- Record Pages
+  - Case_Record_Page, WarriorServeContactPage, Service_Record_Record_Page
+  - Education/Employment/Injury record pages
+- SettingsHome
+  - Central landing area for Settings LWCs and admin guidance
+
+After install, assign these pages/utility bars to the appropriate Apps and Profiles.
+
+---
+
+### ⚡️ Flows
+
+- Record_Trigger_Service_Record_Before_Save
+  - Validates/normalizes ServiceRecord__c data prior to DML
+- Schedule_Trigger_Partner_Rating
+  - Scheduled maintenance for partner ratings (ensure schedule activation post-deploy)
+- Screen_Flow_HUD_Homeless
+  - Guided HUD Homelessness intake; grant Flow access to case worker profiles
+
+---
+
+### 🧠 Lightning Web Components (LWC)
+
+- basicSettingManager
+  - Toggles: Enable WarriorServe, Case Auto Create, Event Logging, Task Auto Create
+  - Disables dependent toggles when WarriorServe is off
+- advancedSettingsManager
+  - Veteran Confirmation, VA Facility retrieval options, batch/scheduler limits, auto-sharing
+  - Requires user acknowledgement prior to edits
+- aboutSettingManager
+  - Contextual info about features and configuration
+- contactDataIntegrity
+  - Scores Contact completeness and lists missing critical fields
+- contactQuickView
+  - Compact roll-up (Contact highlights + related lists such as Service Records and Education)
+- contactTimeline
+  - EventLogUtility-backed timeline of significant Contact events
+- nearbyVAFacilitiesMap
+  - Map of VA facilities near Contact mailing address (requires VA integration enabled)
+
+Add these components to Lightning pages using App Builder as shown in the Flexipage section.
+
+---
+
+### 🎯 Trigger Handlers (Summary)
+
+- CaseTriggerHandler
+  - Maintains computed fields/rollups, schedules post-insert processing where applicable
+  - Skips logic based on org-level settings (WarriorServeSettings__c)
+- ContactTriggerHandler
+  - Contact lifecycle automation (e.g., HUD task creation, related case orchestration)
+  - Honors settings flags to minimize side effects
+- CaseReferralTriggerHandler
+  - Referential integrity and consent/email checks for CaseReferral__c
+- ConditionRatingTriggerHandler
+  - Enforces uniqueness (case-insensitive) and alignment to Case.Type values
+  - Works even if duplicate rules are disabled
+- SupportActionTriggerHandler
+  - Keeps Case rollups in sync with SupportAction__c transactions
+
+All handlers are bulkified and tested. See individual Test classes for scenarios and assertions.
+
+---
+
+### 🧰 Services & Utilities
+
+- VAFacilitiesService (Queueable, callouts)
+  - Queries nearby VA facilities for a Contact location
+  - Mockable for tests (VAFacilitiesServiceMock)
+- VeteranConfirmationStatus (Queueable, callouts)
+  - Verifies veteran status via external API
+  - Mockable for tests (VeteranConfirmationStatusMock)
+- EventLogUtility
+  - Creates/reads EventLog__c entries for Contact timelines and auditing
+- HandleException
+  - Centralized error capture with support for synchronous and async contexts
+- MetricsGenerator (Schedulable)
+  - Periodic snapshot into Metric__c for org health KPIs
+- SettingsManagerController (AuraEnabled)
+  - Backing controller for Settings LWCs
+- CollectionUtils
+  - Common collection helpers used across triggers/services
+- PostInstall (InstallHandler)
+  - Post-install initialization and data seeding hook
+
+---
+
+### 🧪 Testing
+
+- Unit tests per handler/service with mock callouts where required
+- Example scenarios:
+  - Duplicate detection and picklist validation (ConditionRating)
+  - Contact lifecycle (insert/update; HUD task; record-derived toggles)
+  - Case rollup recalculations and skip logic
+  - External integrations (VA Facilities, Veteran Confirmation) via HttpCalloutMock
+
+Run all tests:
+- From VS Code: Apex Tests view
+- From CLI: sf apex run test --code-coverage --wait 10
+
+---
+
+### 📦 Deployment & Setup (Scratch Orgs)
+
+1) Prerequisites
+- My Domain enabled
+- Digital Experiences enabled
+- OWD (External) — Contact (Private), Case (Private), adjust “Contact Internal” (not “Controlled by Parent”)
+
+2) Create Scratch Org
+- sf org create scratch -f config/project-scratch-def.json -a WarriorServe -d 7
+
+3) Deploy Source and Assign Permissions
+- sf project deploy start -d force-app
+- sf org assign permset --name WarriorServeAdministrator
+- sf org assign permset --name WarriorServeUser
+
+4) Post-Deploy Configuration
+- Remote Site: enable VeteransAffairsAPI
+- Custom Metadata: populate WarriorServeAPISettings for VA endpoints/keys
+- Pages: set app default pages and utility bars
+- Flows: activate/schedule Schedule_Trigger_Partner_Rating if required
+
+5) Open Org
+- sf org open
+
+---
+
+### 🔎 Admin Scripts
+
+Use the included Apex scripts for quick setup/testing:
+
+- scripts/apex/setDefaultConditions.apex
+  - Seeds ConditionRating__c defaults
+- scripts/apex/runVAFacilitiesServices.apex
+  - Exercises VAFacilitiesService for a sample Contact
+- scripts/apex/hello.apex, scripts/apex/test.apex
+  - Sanity checks for org/package readiness
+- scripts/soql/account.soql
+  - Convenience query for Account data checks
+
+Execute:
+- sf apex run --file scripts/apex/setDefaultConditions.apex
+
+---
+
+### 🧭 Known Gaps / TODOs
+
+- SupportAction__c: evaluate merging into Case Referral or clarify data model separations
+- Finance__c: finalize definition, fields, and documentation
+- Metric generation: verify visibility and production scheduling
+- Case vs CaseReferral__c field duplication: rationalize fields such as HousingPartnerRef__c
 
 ---
 
