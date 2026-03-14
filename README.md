@@ -18,7 +18,7 @@ Before installing WarriorServe, complete the following steps to ensure the packa
 
   - In Salesforce Setup:
     - Go to: `Setup → Company Settings → My Domain`
-    (**Ensure they choose one they are happy being public**)
+    (**Ensure you choose a domain you are comfortable making public.**)
 
 2. **Enable Digital Experiences (Experience Cloud)**
 
@@ -43,9 +43,8 @@ Before installing WarriorServe, complete the following steps to ensure the packa
 1. **Log Into Org**
 
   - While logged into org
-    - Install `WarriorServe API`
-    - adjust URL to the following: `{Domain} + /packaging/installPackage.apexp?p0= + {packageId}`
-    - Once completed Install `WarriorServe Core` in the same manner
+    - Install `WarriorServe`
+    - adjust URL to the following: `https://login.salesforce.com/packaging/installPackage.apexp?p0=XXXXXXXXXXXX`
 
 ### 📦 Core Objects
 
@@ -129,11 +128,11 @@ Standard Object for Contacts.
 
 ### `Condition Rating` (Custom Object)
 
-Allows for managing setting colors for cases and severuity
+Allows for managing setting colors for cases and severity
 
 ### `Education` (Custom object)
 
-Allow for storing information regarding the contacts education status such as schooling attented or certifications completed.
+Allow for storing information regarding the contacts education status such as schooling attended or certifications completed.
 
 ### `Employment` (Custom Object)
 
@@ -161,10 +160,10 @@ Stores a base survey of how a contact feels regarding themselves and their commu
 
 ### `Service Record` (Custom Object)
 
-Stores informaiton regarding a contacts individual service history
+Stores information regarding a contacts individual service history
 
 ### `Metric` (Custom Object)
-Stores an automatically generated snapshot of how your organziation is doing using predefined context
+Stores an automatically generated snapshot of how your organization is doing using predefined context
 
 A snapshot overview of how your organization has done serving their community.
 //TODO finish Metric and ensure it is visible and being schedule popualted.
@@ -268,12 +267,7 @@ WarriorServe includes **modular settings components** to configure system behavi
 More features and configuration options will be appended as additional parts of the WarriorServe system are documented and implemented.
 
 ---
-#### **Update from Old WarriorServe Field Mapping**
 
-* Suggest downloading objects directly and reuploading with a service like Salesforce Inspector after changing headers to new fields
-* For the same object only update, for different/new objects insert new and remove/hide old. 
-
----
 #### Suggestions for NPSP
 
 * Add to Contact Dynamic Form page WarriorServeContactPage 
