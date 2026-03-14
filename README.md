@@ -1,7 +1,5 @@
-# WarriorServe-docs
-WarriorServe® documentation, installation guides, and configuration references for deploying the WarriorServe platform in Salesforce organizations.
-
-## WarriorServe Package Documentation
+## WarriorServe® Package Documentation
+WarriorServe® documentation, installation guides, and configuration references for deploying the WarriorServe® platform in Salesforce organizations.
 
 ### ⚙️ Overview
 
@@ -10,7 +8,7 @@ WarriorServe is a managed package that facilitates partner coordination, data co
 ---
 ### 🛠️ Installation & Configuration Requirements
 
-Before installing WarriorServe, complete the following steps to ensure the package deploys and functions correctly.
+Before installing WarriorServe®, complete the following steps to ensure the package deploys and functions correctly.
 
 ### Prerequisites (Before Installing the Package)
 
@@ -140,7 +138,7 @@ Stores information regarding a contacts employment history or current employment
 
 ### `Error` (Custom Object)
 
-Stores infomration regarding errors that may happen during WarriorServe usage for debugging purposes
+Stores infomration regarding errors that may happen during WarriorServe® usage for debugging purposes
 
 ### `Event Log` (Custom Object)
 
@@ -228,14 +226,14 @@ Handles `BEFORE INSERT` logic for `ConditionRating__c`, ensuring alignment with 
 
 ### 🛠️ Settings Management
 
-WarriorServe includes **modular settings components** to configure system behavior:
+WarriorServe® includes **modular settings components** to configure system behavior:
 
 #### **Basic Settings**
 
 * Configured via a dedicated Lightning Web Component (`basicSettingsManager`).
 * Includes core enablement flags, such as:
 
-  * Enable WarriorServe
+  * Enable WarriorServe®
   * Enable Case Auto Create
   * Enable Event Logging
   * Enable Task Auto Create
@@ -259,7 +257,7 @@ WarriorServe includes **modular settings components** to configure system behavi
 
 **Future Configuration Plans:**
 
-* A unified **WarriorServe Settings Home page** is being developed to centralize access to all settings components and related walkthrough documentation.
+* A unified **WarriorServe® Settings Home page** is being developed to centralize access to all settings components and related walkthrough documentation.
 * Additional configuration for `ConditionRating__c` records and error logging visibility will be surfaced through this page.
 
 ---
