@@ -47,14 +47,6 @@ Before installing WarriorServe, complete the following steps to ensure the packa
     - adjust URL to the following: `{Domain} + /packaging/installPackage.apexp?p0= + {packageId}`
     - Once completed Install `WarriorServe Core` in the same manner
 
-### 🧩 Post-Installation Steps
-
-1. **Run Initialization Script**
-
-   Run the Apex script:
-   ```text
-   setDefaultConditions.apex
----  
 ### 📦 Core Objects
 
 #### `Case Referral` (Custom Object)
