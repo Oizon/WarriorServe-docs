@@ -28,9 +28,9 @@ Before installing WarriorServe®, complete the following steps to ensure the pac
 
   - In Salesforce Setup
     - Go to: `Setup  → Sharing Settings → Edit
-    - **Contact Internal**: Any except `Controlled by Parent` 
+    - **Contact Internal**: Any except `Controlled by Parent`
     - **Contact External**: `Private`
-    - **Case External**: `Private`  
+    - **Case External**: `Private`
 
 4. **Enable Folders and Enhanced Sharing**
   - In Salesforce Setup:
