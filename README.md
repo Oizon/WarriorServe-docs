@@ -94,20 +94,20 @@ Standard Object for Accounts.
 - **VA Facility External Id** (`VAFacilityExternalId__c`) - *Text*: This field stores the external identifier linking this Salesforce account to the corresponding VA Facility system record. It facilitates integration and data synchronization between Salesforce and the VA Facility system.
 - **Veteran Employer** (`IsVeteranEmployer__c`) - *Checkbox*: Indicates the account employs Veterans.
 - **Volunteer Opportunities** (`IsVolunteerOpportunitiesPartner__c`) - *Checkbox*: Indicated the account is Volunteer Partner.
-- **Label** (`FieldApiName`) — *FieldType*: Use
 
 #### `Case Referral` (Custom Object)
 
-A custom object used to manage the referral of cases to partner contacts.
+Stores data to manage case referrals to partners.
 
-- **CaseRef__c** (Master-Detail -> Case): Links Case Referral to Case for steamlined data association.
-- **IsDoNotEmailContact__c** (Checkbox): Indicates we will not send the Case Referral Email when checked.
-- **RatingPick__c** (Picklist): This picklist on the rating field ranges from 1 to 5 stars and visually represents the rating using star images.
-- **RatingReason__c** (Text): The indicated reason for the selected rating.
-- **Name** (Auto Number): The set number of referral in format CR-{YYYY}{MM}{DD}{0}
-- **ReferredToAccountRef__c** (Master-Detail -> Account): The account we have made a referral to.
-- **ReferredToContactRef__c** (Lookup -> Contact): The individual at the account we are referring to.
-- **StarRatingAuto__c** (Formula(Text)): The visual representation of the Rating.
+- **Case** (`CaseRef__c`) — *Master-Detail -> Case*: Links Case Referral to Case for steamlined data association.
+- **Do Not Email Contact** (`IsDoNotEmailContact__c`) — *Checkbox*: Indicates we will not send the Case Referral Email when checked.
+- **Rating** (`RatingPick__c`) — *Picklist*: This picklist on the rating field ranges from 1 to 5 stars and visually represents the rating using star images.
+- **Rating Auto** (`RatingAuto__c`) — *Formula(Number)*: Numerical version of the rating for easier calculations.
+- **Rating Reason** (`RatingReason__c`) — *Text*: The indicated reason for the selected rating.
+- **Referral Number** (`Name`) — *Auto Number*: The Unique number for this record. 
+- **Referred To Account** (`ReferredToAccountRef__c`) — *Master-Detail -> Account*: The account we have made a referral to.
+- **Referred To Contact** (`ReferredToContactRef__c`) — *Lookup -> Contact*: The individual at the account we are referring to.
+- **Star Rating** (`StarRatingAuto__c`) — *Formula(Text)*: The visual representation of the Rating.
 
 #### `Support Action` (Custom Object)
 
