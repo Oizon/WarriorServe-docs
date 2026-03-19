@@ -111,7 +111,7 @@ Stores data to manage case referrals to partners.
 
 #### `Support Action` (Custom Object)
 
-Stores information about monetary value of a referral //TODO Evaluate merging into case referral.
+Stores information about monetary value of a referral.
 
 - **ActionPick__c** (Picklist): The actions taken.
 - **ActionDate__c** (Date): Indicates the date the action took place.
@@ -158,8 +158,6 @@ Standard Object for Case Tracking.
 - **Target Date To Be Employed** (`TargetDateToBeEmployed__c`) - *Date*: Indicates the individuals desired date to get employment.
 - **Total Value Of Support Actions** (`TotalValueOfSupportActionsTrig__c`) - *Currency*: Holds the total value of support actions for this case.
 - **Work And Shift Desired** (`WorkAndShiftDesiredPick__c`) - *Multi-Select Picklist*: Work and Shift Desired
-
-
 
 #### `Contact` (Standard Object)
 
