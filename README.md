@@ -60,6 +60,42 @@ Before installing WarriorServe®, complete the following steps to ensure the pac
 Additional custom objects manage referrals, service history, and program metrics.
 ### 📦 Core Objects
 
+#### `Account` (Standard Object)
+
+Standard Object for Accounts.
+
+- **Active** (`IsActive__c`) — *Checkbox*: This account is currently active. 
+- **Basic Needs** (`IsBasicNeedsParnter`) - *Checkbox*: Indicated the account is a Basic Needs partner.
+- **Benefits/VSO** (`IsBenefitsVSOPartner__c`) - *Checkbox*: Indicated the account is a Benefits/VSO Partner
+- **Caregiver Support** (`IsCaregiverSupportPartner__c`) - *Checkbox*: Indicated the account is a Caregiver Support Partner
+- **Company Facebook** (`CompanyFacebook__c`) - *URL*: The link to the account's Facebook account.
+- **Company Instagram** (`CompanyInstagram__c`) - *URL*: The link to the account's Instagram account. 
+- **Company LinkedIn** (`CompanyLinkedIn__c`) - *URL*: The link to the account's LinkedIn account.
+- **Company X** (`CompanyX__c`) - *URL*: The link to the account's X account.
+- **Education** (`IsEducationPartner__c`) - *Checkbox*: Indicated the account is a Education Partner.
+- **Family Support** (`IsFamilySupportPartner__c`) - *Checkbox*: Indicated the account assist with Family Support. 
+- **Funding** (`IsFundingPartner__c`) - *Checkbox*: Indicated the account is a Funding Partner.
+- **Housing** (`IsHousingPartner__c`) - *Checkbox*: Indicated the account is a Housing Partner.
+- **Job Placement** (`IsJobPlacementPartner__c`) - *Checkbox*: Indicated the account is a Job Placement Partner.
+- **Legal** (`IsLegalPartner__c`) - *Checkbox*: Indicated the account is a Legal Partner.
+- **Long Term Financial** (`IsLongTermFinancialPartner__c`) - *Checkbox*: Indicated the account is a Long Term Financial Partner.
+- **Medical Devices** (`IsMedicalDevicesPartner__c`) - *Checkbox*: Indicated the account is a Medical Devices Partner.
+- **Mental Health** (`IsMentalHealthPartner__c`) - *Checkbox*: Indicated the account is a Mental Health Partner.
+- **Partner Account Star Rating** (`PartnerStarRatingAuto__c`) - *Formula(TEXT)*: Visual representation of the Partner Score.
+- **Partner Rating** (`PartnerRatingPickTrig__c`) - *Picklist*: Partner score filled in only by automation from Case Referrals.
+- **Peer Support** (`IsPeerSupportPartner__c`) - *Checkbox*: Indicated the account is a Peer Support Partner.
+- **Physical Health** (`IsPhysicalHealthPartner__c`) - *Checkbox*: Indicated the account is a Physical Health Partner.
+- **Recreation** (`IsRecreationPartner__c`) - *Checkbox*: Indicated the account is a Recreation Partner.
+- **Referral Count** (`ReferralCountTrig__c`) - *Number*: The count of Case Referrals only filled by automation.
+- **Short Term Financial** (`IsShortTermFinancialPartner__c`) - *Checkbox*: Indicated the account is a Short Term Financial Partner.
+- **Spirituality** (`IsSpiritualityPartner__c`) - *Checkbox*: Indicated the account is a Spirituality Partner.
+- **Technology** (`IsTechnologyPartner__c`) - *Checkbox*: Indicated the account is a Technology Partner.
+- **Transportation** (`IsTransportationPartner__c`) - *Checkbox*: Indicated the account is a Transportation Partner.
+- **VA Facility External Id** (`VAFacilityExternalId__c`) - *Text*: This field stores the external identifier linking this Salesforce account to the corresponding VA Facility system record. It facilitates integration and data synchronization between Salesforce and the VA Facility system.
+- **Veteran Employer** (`IsVeteranEmployer__c`) - *Checkbox*: Indicates the account employs Veterans.
+- **Volunteer Opportunities** (`IsVolunteerOpportunitiesPartner__c`) - *Checkbox*: Indicated the account is Volunteer Partner.
+- **Label** (`FieldApiName`) — *FieldType*: Use
+
 #### `Case Referral` (Custom Object)
 
 A custom object used to manage the referral of cases to partner contacts.
@@ -124,62 +160,82 @@ Standard Object for Case Tracking.
 - **Work And Shift Desired** (`WorkAndShiftDesiredPick__c`) - *Multi-Select Picklist*: Work and Shift Desired
 
 
-- **HousingPartnerRef__c** (Lookup -> Account):	Referred to this housing partner. (Duplicative to Case Referral Object) SLATED FOR REMOVAL
-- **ShareWithPick__c** (Multi-Select Picklist): This is used to share cases with Groups. The group name must match what is listed here. (Duplicative to Case Referral Object) SLATED FOR REMOVAL
-
-
-
-- **Label** (`FieldApiName`) — *FieldType*: Use
-- **Label** (`FieldApiName`) — *FieldType*: Use
-
-#### `Account` (Standard Object)
-
-Standard Object for Accounts.
-
-- **FieldApiName** (FieldType): use
 
 #### `Contact` (Standard Object)
 
 Standard Object for Contacts.
 
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
+
 ### `Condition Rating` (Custom Object)
 
 Allows for managing setting colors for cases and severity
+
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
 
 ### `Education` (Custom object)
 
 Allow for storing information regarding the contacts education status such as schooling attended or certifications completed.
 
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
+
 ### `Employment` (Custom Object)
 
 Stores information regarding a contacts employment history or current employment.
+
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
 
 ### `Error` (Custom Object)
 
 Stores infomration regarding errors that may happen during WarriorServe® usage for debugging purposes
 
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
+
 ### `Event Log` (Custom Object)
 
 Stores information of meaningful changes to the contact record
+
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
 
 ### `Finance` (Custom Object)
 
 //TODO add definition and finish Finance Object
 
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
+
 ### `Injury` (Custom Object)
 
 Stores information about injuries sustained by a contact.
+
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
 
 ### `QOL Assessment` (Custom Object)
 
 Stores a base survey of how a contact feels regarding themselves and their community
 
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
+
 ### `Service Record` (Custom Object)
 
 Stores information regarding a contacts individual service history
 
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
+
 ### `Metric` (Custom Object)
 Stores an automatically generated snapshot of how your organization is doing using predefined context
+
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
 
 A snapshot overview of how your organization has done serving their community.
 //TODO finish Metric and ensure it is visible and being schedule popualted.
