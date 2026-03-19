@@ -92,41 +92,45 @@ Stores information about monetary value of a referral //TODO Evaluate merging in
 
 Standard Object for Case Tracking.
 
-- **WorkAndShiftDesiredPick__c** (Multi-Select Picklist): Work and Shift Desired
-- **TotalValueOfSupportActionsTrig__c** (Number(18, 0)): Holds the total value of support actions for this case.(why is this a number instead of currency?)
-- **TargetDateToBeEmployed__c** (Date): Indicates the individuals desired date to get employment.
-- **SSVFStatusPick__c** (Picklist): The current SSVF status of the contact.
-- **SSVFHousingCategoryPick__c** (Picklist): The category of SSVF Homelessness.
-- **ShiftDesiredPick__c** (Multi-Select Picklist): Indicates the shift the individual desires.
-- **ShareWithPick__c** (Multi-Select Picklist): This is used to share cases with Groups. The group name must match what is listed here. (Possible remove due to being complicated)
-- **SalaryWagePeriodPick__c** (Picklist): Time Period as applies to Salary/Wage
-- **RecordTypeNameAuto__c** (Formula (Text)): Displays the record type name of the case.
-- **ProfessionalDesignatorPick__c** (Picklist): The Designation of the individual's profession.
-- **ProfessionalCategoryPick__c** (Picklist): The Profession of the individual.
-- **IsResumeAttached__c** (Checkbox): Indicates that the individual's resume is attached to this case.
-- **IsResumeAssistance__c** (Checkbox): Indicates that the individual requires resume assistance.
-- **IsProfessionalMentorship__c** (Checkbox): Identifies that the individual is seeking professional mentorship.
-- **IsJobSearch__c** (Checkbox): Warrior need help finding employment.
-- **IsHasFelony__c** (Checkbox): Indicates the individual has a Felony conviction.
-- **IsCurrentResume__c** (Checkbox): The individual has a current resume.
-- **HousingPartnerRef__c** (Lookup -> Account):	Referred to this housing partner. (Duplicative to Case Referral Object)
-- **FelonyDescription__c** (Text): The description of a felonious act by the individual.
-- **EnrollmentDate__c** (Date): The date enrolled, can be used for different types of enrollment.
-- **DesiredSalaryWage__c** (Currency): The desired salary/wage of the individual.
-- **DesiredAnnualizedSalary__c** (Currency): 	The desired salary of the individual annualized.
-- **DaysOpenAuto__c** (Formula(Number)): The amount of time a case has been or was open.
-- **CurrentSalaryWage__c** (Currency): The current Salary/Wage of the Contact.
-- **ContactPhoneAuto__c** (Formula(Text)): 	Displays the client's phone number if it's available; otherwise, displays "No Phone Provided"
-- **ContactNameAuto__c** (Formula(Text)): Displays the client's full name. If both first and last names are available, it concatenates them; otherwise, it shows whichever part is not blank.
-- **ContactEmailAuto__c** (Formula(Text)):	Displays the client's email if it's available; otherwise, displays "No Email Provided"
-- **ConditionRatingTrig__c** (Text): Set by automation to display a color for each condition.
-- **ConditionAuto__c	** (Formula(Text)): Displays color and name to visually see the condition.
-- **CaseCloseReasonPick__c** (Picklist): The reason the case was closed.
-- **ServiceCategoryPick__c** (Picklist): The subcategory of the case record type. Used with Condition Rating to show a color rated value.
-- **FieldApiName** (FieldType): use
-- **FieldApiName** (FieldType): use
-- **FieldApiName** (FieldType): use
-- **FieldApiName** (FieldType): use
+- **Case Close Reason** (`CaseCloseReasonPick__c`) — *Picklist*: The reason the case was closed.
+- **Condition** (`ConditionAuto__c`) - *Formula(Text)*: Displays color and name to visually see the condition.
+- **Condition Rating** (`ConditionRatingTrig__c`) - *Formula(Text)*: Set by automation to display a color for each condition.
+- **Contact Email** (`ContactEmailAuto__c`) - *Formula(Text)*:	Displays the client's email if it's available; otherwise, displays "No Email Provided". Used in Case Referral Automations.
+- **Contact Name** (`ContactNameAuto__c`) - *Formula(Text)*: Displays the client's full name. If both first and last names are available, it concatenates them; otherwise, it shows whichever part is not blank. Used in Case Referral Automations.
+- **Contact Phone** (`ContactPhoneAuto__c`) - *Formula(Text)*: 	Displays the client's phone number if it's available; otherwise, displays "No Phone Provided"
+- **Current Salary/Wage** (`CurrentSalaryWage__c`) - *Currency*: The current Salary/Wage of the Contact.
+- **Days Open** (`DaysOpenAuto__c`) - *Formula(Number)*: The amount of time a case has been or was open.
+- **Desired Annualized Salary** (`DesiredAnnualizedSalary__c`) - *Currency*: 	The desired salary of the individual annualized.
+- **Desired Salary Wage** (`DesiredSalaryWage__c`) - *Currency*: The desired salary/wage of the individual.
+- **Enrollment Date** (`EnrollmentDate__c`) - *Date*: The date enrolled, can be used for different types of enrollment.
+- **Felony Description** (`FelonyDescription__c`) - *Text*: The description of a felonious act by the individual.
+- **Has Current Resume** (`IsCurrentResume__c`) - *Checkbox*: The individual has a current resume.
+- **Has Felony__c** (`IsHasFelony__c`) - *Checkbox*: Indicates the individual has a Felony conviction.
+- **Highest Level of Education** (`HighestLevelOfEducationPick__c`) - *Picklist*: Indicates the highest level of the individuals education.
+- **Job Search** (`IsJobSearch__c`) - *Checkbox*: Warrior need help finding employment.
+- **Professional Category** (`ProfessionalCategoryPick__c`) - *Picklist*: The Profession of the individual.
+- **Professional Designator** (`ProfessionalDesignatorPick__c`) - *Picklist*: The Designation of the individual's profession.
+- **Professional Mentorship** (`IsProfessionalMentorship__c`) - *Checkbox*: Identifies that the individual is seeking professional mentorship.
+- **Record Type Name** (`RecordTypeNameAuto__c`) — *Formula(Text)*: Displays the record type name of the case. Used in Case Referral Automations.
+- **Resume Assistance** (`IsResumeAssistance__c`) - *Checkbox*: Indicates that the individual requires resume assistance.
+- **Resume Attached** (`IsResumeAttached__c`) - *Checkbox*: Indicates that the individual's resume is attached to this case.
+- **Salary/Wage Period** (`SalaryWagePeriodPick__c`) - *Picklist*: Time Period as applies to Salary/Wage
+- **Service Category** (`ServiceCategoryPick__c`) - *Picklist*: The subcategory of the case record type. Used with Condition Rating to show a color rated value.
+- **Shift Desired** (`ShiftDesiredPick__c`) - *Multi-Select Picklist*: Indicates the shift the individual desires.
+- **SSVF Housing Category** (`SSVFHousingCategoryPick__c`) - *Picklist*: The category of SSVF Homelessness.
+- **SSVF Status** (`SSVFStatusPick__c`) - *Picklist*: The current SSVF status of the contact.
+- **Target Date To Be Employed** (`TargetDateToBeEmployed__c`) - *Date*: Indicates the individuals desired date to get employment.
+- **Total Value Of Support Actions** (`TotalValueOfSupportActionsTrig__c`) - *Currency*: Holds the total value of support actions for this case.
+- **Work And Shift Desired** (`WorkAndShiftDesiredPick__c`) - *Multi-Select Picklist*: Work and Shift Desired
+
+
+- **HousingPartnerRef__c** (Lookup -> Account):	Referred to this housing partner. (Duplicative to Case Referral Object) SLATED FOR REMOVAL
+- **ShareWithPick__c** (Multi-Select Picklist): This is used to share cases with Groups. The group name must match what is listed here. (Duplicative to Case Referral Object) SLATED FOR REMOVAL
+
+
+
+- **Label** (`FieldApiName`) — *FieldType*: Use
+- **Label** (`FieldApiName`) — *FieldType*: Use
 
 #### `Account` (Standard Object)
 
