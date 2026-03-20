@@ -385,7 +385,7 @@ Maintains rollup totals of financial or service-based support actions on related
 
 ### 🛠️ Settings Management
 
-WarriorServe® includes **modular settings components** to configure system behavior:
+WarriorServe® includes **modular settings components** to configure system behavior via the **WarriorServe Settings and Tools** application.
 
 #### **Basic Settings**
 
@@ -481,14 +481,10 @@ More features and configuration options will be appended as additional parts of 
 
 Assign these to users after install:
 
-- WarriorServe Administrator
-  - Full access to Settings Home and related tabs (Settings Home, Error, Metric, Condition Rating)
-  - Manage Basic/Advanced Settings components
-  - Required CRUD/FLS on custom objects used by configuration
-- WarriorServe User
-  - Operational access for case workers
-  - Access to Contact/Case and related custom objects needed by automations (ServiceRecord__c, CaseReferral__c, SupportAction__c, etc.)
-  - Visibility for LWCs embedded on Lightning pages (Quick View, Timeline, Data Integrity)
+- WarriorServe Configuration
+  - Grants access to WarriorServe configuration tools and administrative features. Does not include object permissions and must be paired with a permission set or profile that provides data access.
+- WarriorServe Operational
+  - Grants object permissions required to use WarriorServe, including create, read, update, and delete access where applicable. Intended for end users interacting with WarriorServe data and processes.
 
 Note: Validate OWD and Profile tab visibility so utility bars and record pages appear as intended.
 
