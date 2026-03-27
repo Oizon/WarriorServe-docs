@@ -209,7 +209,6 @@ Standard Object for Contacts.
 - **Open Yellow Cases** (`OpenYellowCasesTrig__c`) — *Number(18,0)*: The count of open yellow cases.
 - **Other** (`IsInitialOther__c`) — *Checkbox*: Indicates an initial other case should be opened for the contact.
 - **Post 9/11 Service Records** (`Post911ServiceRecordsTrig__c`) — *Number(18,0)*: Indicates the number of Post 9/11 service records assigned to the contact.
-- **Post 9/11 Warrior** (`IsPost911Warrior__c`) — *Checkbox*: Indicates the contact is a post 9/11 Warrior.
 - **Preferred Method of Contact** (`PreferredMethodOfContactPick__c`) — *Picklist*: Indicates the contact's preferred way to be contacted.
 - **Race** (`RacePick__c`) — *Picklist (Multi-Select)*: Indicates the racial identity of the contact.
 - **Record Age** (`RecordAgeAuto__c`) — *Formula(Number)*: Indicates the age of the contact in days.
