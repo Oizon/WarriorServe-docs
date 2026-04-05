@@ -52,12 +52,116 @@ Before installing WarriorServe®, complete the following steps to ensure the pac
 ### 🏛️ Architecture
 
   - WarriorServe extends core Salesforce objects including:
-
     - Contact
     - Account
     - Case
 
 Additional custom objects manage referrals, service history, and program metrics.
+
+### ⚡ Setup Steps
+  - Assign WarriorServe Configuration Perm to the primary admin.
+  - Open WarriorServe Settings And Tools and Enable your desired features.
+  - Set Record Type Case field Service Category
+    - Benefits
+      - Assistance (Enroll Non-VA State and Federal Benefits)
+      - Benefits Increase
+      - Discharge Upgrade
+      - Enroll VA Benefits Portal
+      - New Claim
+      - Other
+    - Education
+      - Assistance (Enroll Education Benefits)
+      - Assistance (Enroll in School)
+      - Financial Aid
+      - School Supplies
+      - Tutoring
+      - Other
+    - Employment
+      - Career Counseling
+      - Interview Assistance
+      - Job Equipment
+      - Job Search
+      - Resume Assistance
+      - Other
+    - Healthcare
+      - Enroll VA
+      - Malpractice
+      - Medical Equipment/Accessories
+      - Mental Health
+      - Physical Health
+      - Other
+    - Housing
+      - At Risk for Homelessness
+      - Furniture/Household Goods
+      - Homeless (HUD)
+      - Homeless (Ineligible for HUD and SSVF)
+      - Homeless (SSVF)
+      - Mortgage Assistance
+      - Property Tax
+      - Rental Assistance
+      - Repairs/One-Time Fix
+      - Seeking New Home
+      - SSVF (Homelessness Prevention)
+      - SSVF (Rapid Re-Housing)
+      - Utilities
+      - Other
+    - Initial Information
+      - DD214
+      - Initial Care Plan
+      - Other
+    - Legal
+      - Civil
+      - Criminal
+      - Family
+      - Healthcare
+      - Property
+      - Other
+    - Other
+      - Caregiver Support
+      - Childcare
+      - Clothing
+      - Family Support
+      - Financial/Budgeting
+      - Food
+      - Peer Mentorship
+      - Recreational
+      - Spiritual
+      - Transportation
+      - Volunteer
+      - WWP® Enrollment
+      - WWP® Family Enrollment
+      - Other
+  - Create Permission Set with Access to
+    - App
+      - WarriorServe
+    - Objects
+      - Account
+      - Case
+      - Case Referral
+      - Contact
+      - Service Record
+      - Event Log (View Only Suggested)
+  - Open each flow customize as needed Save as New Flow and Activate:
+    - AL Get Contact
+    - RT Case Referral After Save Partner Notification - Add namespace prefix to Formula
+    - RT Contact After Save WWP Registration Requested - Add namespace prefix to Formula
+    - RT Service Record Before Save Prevent Overlapping Dates
+    - Screen Flow Intake Guided Entry - Add namespace prefix to Dependant Fields, if Rich Text Case Comments is not on 
+    - Screen Flow Partner Search and Referral Creation - Add namespace prefix to Lookup Fields
+  - Make Custom Actions for Intake (Suggestion on Contact and Case)
+    - Contact => Buttons,Links, and Actions => New Action
+    - Case => Buttons,Links, and Actions => New Action
+    - Add intake button to desired page layouts
+      - Contact Page Layout
+      - Case dynamic Actions Suggested
+    - Add Refer to AWP Button to Case Dynamic Actions
+  - Make Custom Actions for Partner Search and Referral Creation (Suggestion List View Case Referral)
+    - Case => Buttons,Links, and Actions => New Action
+    - Case Referral => Buttons,Links, and Actions => New Button or Link /lightning/action/quick/Case.(Case Action Api Name)?objectApiName&context=RECORD_DETAIL&recordId={!CASESAFEID(Case.Id)}&backgroundContext=%2Flightning%2Fr%2F2FCase%2F{!CASESAFEID(Case.Id)}%2Fview
+      - List View Button
+    - Add to Case Lighting Record Page => Edit Page => Related => Case Referrals => Add Action 
+
+
 ### 📦 Core Objects
 
 #### `Account` (Standard Object)
@@ -163,9 +267,6 @@ Standard Object for Contacts.
 - **Condition Rating** (`ConditionRatingAuto__c`) — *Formula(Text)*: Indicates the contact's condition based on their current open cases.
 - **Consent to Share Information** (`ConsentStatusPick__c`) — *Picklist*: Indicates the individual’s consent status for sharing their information with approved partner organizations for coordination of services. This field should reflect the most current consent decision and is used to control data sharing and integrations.
 - **Current Living Situation** (`CurrentLivingConditionPick__c`) — *Picklist*: The contact’s current housing or living situation at the time the information is collected. Use this field to record where the contact is presently staying, such as rented housing, temporary shelter, institutional housing, or other current living arrangements.
-- **Date Education Benefits Last Updated** (`DateEducationBenefitsLastUpdatedTrig__c`) — *Date*: Last data that Education Benefits were updated to INCLUDE benefits.
-- **Date Enrolled in VA Benefits Portal** (`DateEnrolledInVABenefitsPortalTrig__c`) — *Date*: Date enrolled in VA Benefits Portal selected.
-- **Date First Eligible for VA Ed Benefits** (`DateFirstEligibleForVAEdBenefitsTrig__c`) — *Date*: Date first eligible for VA Education Benefits
 - **Date Last Housed** (`DateLastHousedTrig__c`) — *Date*: Date the contact was last housed.
 - **Date Unemployed Set** (`DateUnemployedSetTrig__c`) — *Date*: Date the contact was set as unemployed.
 - **Deceased Date** (`DeceasedDate__c`) — *Date*: The date the contact was determined deceased.
@@ -476,14 +577,12 @@ More features and configuration options will be appended as additional parts of 
 
 ---
 
-### 🔐 Permission Sets
+### 🔐 Permission Set
 
 Assign these to users after install:
 
 - WarriorServe Configuration
   - Grants access to WarriorServe configuration tools and administrative features. Does not include object permissions and must be paired with a permission set or profile that provides data access.
-- WarriorServe Operational
-  - Grants object permissions required to use WarriorServe, including create, read, update, and delete access where applicable. Intended for end users interacting with WarriorServe data and processes.
 
 Note: Validate OWD and Profile tab visibility so utility bars and record pages appear as intended.
 
@@ -654,10 +753,7 @@ Execute:
 
 ### 🧭 Known Gaps / TODOs
 
-- SupportAction__c: evaluate merging into Case Referral or clarify data model separations
-- Finance__c: finalize definition, fields, and documentation
-- Metric generation: verify visibility and production scheduling
-- Case vs CaseReferral__c field duplication: rationalize fields such as HousingPartnerRef__c
+- Submit your request!
 
 ---
 
