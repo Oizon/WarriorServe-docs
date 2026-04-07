@@ -31,7 +31,7 @@ Before installing WarriorServe®, complete the following steps to ensure the pac
     - **Contact Internal**: Any except `Controlled by Parent`
     - **Contact External**: `Private`
     - **Case External**: `Private`
-
+ 
 4. **Enable Folders and Enhanced Sharing**
   - In Salesforce Setup:
     - Go to: `Setup → Lightning Email Templates`
@@ -256,7 +256,7 @@ Defines standardized severity levels with unique names and color codes for class
 - **Type API Name** (`Name`) — *Text(80)*: The exact API name that should be checked as on the Case field `ServiceCategoryPick__c`.
 
 #### `Contact` (Standard Object)
-
+ 
 Standard Object for Contacts.
 
 - **Age** (`AgeAuto__c`) — *Formula(Number)*: The contact's current age.
