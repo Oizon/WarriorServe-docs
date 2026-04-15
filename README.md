@@ -125,7 +125,7 @@ Standard Object for Accounts.
 - **Spirituality** (`IsSpiritualityPartner__c`) - *Checkbox*: Indicated the account is a Spirituality Partner.
 - **Technology** (`IsTechnologyPartner__c`) - *Checkbox*: Indicated the account is a Technology Partner.
 - **Transportation** (`IsTransportationPartner__c`) - *Checkbox*: Indicated the account is a Transportation Partner.
-- **VA Facility External Id** (`VAFacilityExternalId__c`) - *Text*: This field stores the external identifier linking this Salesforce account to the corresponding VA Facility system record. It facilitates integration and data synchronization between Salesforce and the VA Facility system.
+- **VA Facility External Id** (`WarriorSrv__VAFacilityExternalId__c`) - *Text*: This field stores the external identifier linking this Salesforce account to the corresponding VA Facility system record. It facilitates integration and data synchronization between Salesforce and the VA Facility system.
 - **Veteran Employer** (`IsVeteranEmployer__c`) - *Checkbox*: Indicates the account employs Veterans.
 - **Volunteer Opportunities** (`IsVolunteerOpportunitiesPartner__c`) - *Checkbox*: Indicated the account is Volunteer Partner.
 
