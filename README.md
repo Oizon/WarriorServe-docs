@@ -708,3 +708,6 @@ Execute:
   * Account Household Record Type
   * Account Organization Record Type
 ---
+
+## Documentation
+- [ChangeLog](/WarriorServe-docs/release-notes/CHANGELOG.md)
