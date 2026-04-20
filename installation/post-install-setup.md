@@ -1,0 +1,32 @@
+### ⚡ Setup Steps
+  - Assign WarriorServe Configuration Perm to the primary admin.
+  - Open WarriorServe Settings And Tools and Enable your desired features.
+  - Create Permission Set with Access to
+    - App
+      - WarriorServe
+    - Objects
+      - Account
+      - Case
+      - Case Referral
+      - Contact
+      - Service Record
+      - Event Log (View Only Suggested)
+  - Open each flow customize as needed Save as New Flow and Activate:
+    - AL Get Contact
+    - RT Case Referral After Save Partner Notification
+    - RT Contact After Save WWP Registration Requested
+    - RT Service Record Before Save Prevent Overlapping Dates
+    - Screen Flow Intake Guided Entry
+    - Screen Flow Partner Search and Referral Creation
+  - Make Custom Actions for Intake (Suggestion on Contact and Case)
+    - Contact => Buttons,Links, and Actions => New Action
+    - Case => Buttons,Links, and Actions => New Action
+    - Add intake button to desired page layouts
+      - Contact Page Layout
+      - Case dynamic Actions Suggested
+    - Add Refer to AWP Button to Case Dynamic Actions
+  - Make Custom Actions for Partner Search and Referral Creation (Suggestion List View Case Referral)
+    - Case => Buttons,Links, and Actions => New Action
+    - Case Referral => Buttons,Links, and Actions => New Button or Link /lightning/action/quick/Case.(Case Action Api Name)?objectApiName&context=RECORD_DETAIL&recordId={!CASESAFEID(Case.Id)}&backgroundContext=%2Flightning%2Fr%2F2FCase%2F{!CASESAFEID(Case.Id)}%2Fview
+      - List View Button
+    - Add to Case Lighting Record Page => Edit Page => Related => Case Referrals => Add Action 
