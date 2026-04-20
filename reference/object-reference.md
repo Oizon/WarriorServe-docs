@@ -4,36 +4,39 @@
 
 Standard Object for Accounts.
 
-- **Active** (`IsActive__c`) — *Checkbox*: This account is currently active. 
-- **Basic Needs** (`IsBasicNeedsParnter`) - *Checkbox*: Indicated the account is a Basic Needs partner.
-- **Benefits/VSO** (`IsBenefitsVSOPartner__c`) - *Checkbox*: Indicated the account is a Benefits/VSO Partner
-- **Caregiver Support** (`IsCaregiverSupportPartner__c`) - *Checkbox*: Indicated the account is a Caregiver Support Partner
-- **Company Facebook** (`CompanyFacebook__c`) - *URL*: The link to the account's Facebook account.
-- **Company Instagram** (`CompanyInstagram__c`) - *URL*: The link to the account's Instagram account. 
-- **Company LinkedIn** (`CompanyLinkedIn__c`) - *URL*: The link to the account's LinkedIn account.
-- **Company X** (`CompanyX__c`) - *URL*: The link to the account's X account.
-- **Education** (`IsEducationPartner__c`) - *Checkbox*: Indicated the account is a Education Partner.
-- **Family Support** (`IsFamilySupportPartner__c`) - *Checkbox*: Indicated the account assist with Family Support. 
-- **Funding** (`IsFundingPartner__c`) - *Checkbox*: Indicated the account is a Funding Partner.
-- **Housing** (`IsHousingPartner__c`) - *Checkbox*: Indicated the account is a Housing Partner.
-- **Job Placement** (`IsJobPlacementPartner__c`) - *Checkbox*: Indicated the account is a Job Placement Partner.
-- **Legal** (`IsLegalPartner__c`) - *Checkbox*: Indicated the account is a Legal Partner.
-- **Long Term Financial** (`IsLongTermFinancialPartner__c`) - *Checkbox*: Indicated the account is a Long Term Financial Partner.
-- **Medical Devices** (`IsMedicalDevicesPartner__c`) - *Checkbox*: Indicated the account is a Medical Devices Partner.
-- **Mental Health** (`IsMentalHealthPartner__c`) - *Checkbox*: Indicated the account is a Mental Health Partner.
-- **Partner Account Star Rating** (`PartnerStarRatingAuto__c`) - *Formula(TEXT)*: Visual representation of the Partner Score.
-- **Partner Rating** (`PartnerRatingPickTrig__c`) - *Picklist*: Partner score filled in only by automation from Case Referrals.
-- **Peer Support** (`IsPeerSupportPartner__c`) - *Checkbox*: Indicated the account is a Peer Support Partner.
-- **Physical Health** (`IsPhysicalHealthPartner__c`) - *Checkbox*: Indicated the account is a Physical Health Partner.
-- **Recreation** (`IsRecreationPartner__c`) - *Checkbox*: Indicated the account is a Recreation Partner.
-- **Referral Count** (`ReferralCountTrig__c`) - *Number*: The count of Case Referrals only filled by automation.
-- **Short Term Financial** (`IsShortTermFinancialPartner__c`) - *Checkbox*: Indicated the account is a Short Term Financial Partner.
-- **Spirituality** (`IsSpiritualityPartner__c`) - *Checkbox*: Indicated the account is a Spirituality Partner.
-- **Technology** (`IsTechnologyPartner__c`) - *Checkbox*: Indicated the account is a Technology Partner.
-- **Transportation** (`IsTransportationPartner__c`) - *Checkbox*: Indicated the account is a Transportation Partner.
+- **Company Facebook** (`WarriorSrv__CompanyFacebook__c`) - *URL*: The link to the account's Facebook account.
+- **Company Instagram** (`WarriorSrv__CompanyInstagram__c`) - *URL*: The link to the account's Instagram account. 
+- **Company LinkedIn** (`WarriorSrv__CompanyLinkedIn__c`) - *URL*: The link to the account's LinkedIn account.
+- **Company X** (`WarriorSrv__CompanyX__c`) - *URL*: The link to the account's X account.
+- **Elgigiblity Criteria** (`WarriorSrv__EligibilityCriteria`) - *Text*: Captures the specific requirements individuals must meet to qualify for services.
+- **Basic Needs** (`WarriorSrv__IsBasicNeedsParnter`) - *Checkbox*: Indicated the account is a Basic Needs partner.
+- **Benefits/VSO** (`WarriorSrv__IsBenefitsVSOPartner__c`) - *Checkbox*: Indicated the account is a Benefits/VSO Partner
+- **Caregiver Support** (`WarriorSrv__IsCaregiverSupportPartner__c`) - *Checkbox*: Indicated the account is a Caregiver Support Partner
+- **Education** (`WarriorSrv__IsEducationPartner__c`) - *Checkbox*: Indicated the account is a Education Partner.
+- **Family Support** (`WarriorSrv__IsFamilySupportPartner__c`) - *Checkbox*: Indicated the account assist with Family Support. 
+- **Funding** (`WarriorSrv__IsFundingPartner__c`) - *Checkbox*: Indicated the account is a Funding Partner.
+- **Housing** (`WarriorSrv__IsHousingPartner__c`) - *Checkbox*: Indicated the account is a Housing Partner.
+- **Job Placement** (`WarriorSrv__IsJobPlacementPartner__c`) - *Checkbox*: Indicated the account is a Job Placement Partner.
+- **Legal** (`WarriorSrv__IsLegalPartner__c`) - *Checkbox*: Indicated the account is a Legal Partner.
+- **Long Term Financial** (`WarriorSrv__IsLongTermFinancialPartner__c`) - *Checkbox*: Indicated the account is a Long Term Financial Partner.
+- **Medical Devices** (`WarriorSrv__IsMedicalDevicesPartner__c`) - *Checkbox*: Indicated the account is a Medical Devices Partner.
+- **Mental Health** (`WarriorSrv__IsMentalHealthPartner__c`) - *Checkbox*: Indicated the account is a Mental Health Partner.
+- **Peer Support** (`WarriorSrv__IsPeerSupportPartner__c`) - *Checkbox*: Indicated the account is a Peer Support Partner.
+- **Physical Health** (`WarriorSrv__IsPhysicalHealthPartner__c`) - *Checkbox*: Indicated the account is a Physical Health Partner.
+- **Recreation** (`WarriorSrv__IsRecreationPartner__c`) - *Checkbox*: Indicated the account is a Recreation Partner.
+- **Short Term Financial** (`WarriorSrv__IsShortTermFinancialPartner__c`) - *Checkbox*: Indicated the account is a Short Term Financial Partner.
+- **Spirituality** (`WarriorSrv__IsSpiritualityPartner__c`) - *Checkbox*: Indicated the account is a Spirituality Partner.
+- **Technology** (`WarriorSrv__IsTechnologyPartner__c`) - *Checkbox*: Indicated the account is a Technology Partner.
+- **Transportation** (`WarriorSrv__IsTransportationPartner__c`) - *Checkbox*: Indicated the account is a Transportation Partner.
+- **Volunteer Opportunities** (`WarriorSrv__IsVolunteerOpportunitiesPartner__c`) - *Checkbox*: Indicated the account is Volunteer Partner.
+- **Partner Account Star Rating** (`WarriorSrv__PartnerStarRatingAuto__c`) - *Formula(TEXT)*: Visual representation of the Partner Score.
+- **Partner Rating** (`WarriorSrv__PartnerRatingPickTrig__c`) - *Picklist*: Partner score filled in only by automation from Case Referrals.
+- **Referral Count** (`WarriorSrv__ReferralCountTrig__c`) - *Number*: The count of Case Referrals only filled by automation.
+- **Referral Type** (`WarriorSrv__ReferralTypePick__c`) - *Picklist*: Indicates the type of referral required or accepted by the organization.
+- **Service Coverage** (`WarriorSrv__ServiceCoveragePick__c`) - *Picklist*: Indicates the geographic scope of services provided by the organization, specifying whether they serve local or national clients. This helps categorize organizations based on their service area for accurate referral and resource matching.
+- **Service Description** (`WarriorSrv__ServiceDescription__c`) - *Text*: Describes the services provided by the organization.
 - **VA Facility External Id** (`WarriorSrv__VAFacilityExternalId__c`) - *Text*: This field stores the external identifier linking this Salesforce account to the corresponding VA Facility system record. It facilitates integration and data synchronization between Salesforce and the VA Facility system.
-- **Veteran Employer** (`IsVeteranEmployer__c`) - *Checkbox*: Indicates the account employs Veterans.
-- **Volunteer Opportunities** (`IsVolunteerOpportunitiesPartner__c`) - *Checkbox*: Indicated the account is Volunteer Partner.
+
 
 #### `Case` (Standard Object)
 
