@@ -1,20 +1,33 @@
-#### Suggestions for NPSP
+### 🛠️ NPSP Suggestions
 
-* Add to Contact Dynamic Form page WarriorServeContactPage 
-  * npsp__Deceased__c
-  * preferred phone
-  * preferred email
-  * workphone
-  * do not contact
-  * personal email
-  * work email
-  * alt email
-  * household address
-  * Private
-  * Related List Relationships
+Optional recommendations for organizations using Nonprofit Success Pack (NPSP) alongside WarriorServe. These items are not installed by WarriorServe and should be configured only if NPSP is in use.
 
-* Above should also go on relavent page layouts
+## Contact Page Enhancements
 
-* Permissions on WarriorServe User
-  * Account Household Record Type
-  * Account Organization Record Type
+If using Dynamic Forms on the `WarriorServeContactPage`, consider adding the following NPSP fields/components:
+
+### Recommended Fields
+- npsp__Deceased__c
+- Preferred Phone
+- Preferred Email
+- Work Phone
+- Do Not Contact
+- Personal Email
+- Work Email
+- Alternate Email
+- Household Address
+- Private
+
+### Recommended Related Lists
+- Relationships
+
+## Page Layouts
+
+If your organization uses traditional page layouts instead of Dynamic Forms, consider adding the same fields and related lists to the appropriate Contact page layouts.
+
+## Permissions
+
+Consider updating the `WarriorServe User` permission set (or equivalent user access model) to include access to these Account record types when needed:
+
+- Household Account
+- Organization Account
