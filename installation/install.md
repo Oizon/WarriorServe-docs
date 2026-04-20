@@ -1,8 +1,8 @@
-### 🛠️ Installation & Configuration Requirements
+# 🛠️ Installation & Configuration Requirements
 
 Before installing WarriorServe®, complete the following steps to ensure the package deploys and functions correctly.
 
-### Prerequisites (Before Installing the Package)
+## Prerequisites (Before Installing the Package)
 
 1. **Enable My Domain**
 
@@ -24,7 +24,7 @@ Before installing WarriorServe®, complete the following steps to ensure the pac
     - **Contact External**: `Private`
     - **Case External**: `Private`
 
-### 🚀 Installation
+## 🚀 Installation
 
 1. **Log Into Org**
 

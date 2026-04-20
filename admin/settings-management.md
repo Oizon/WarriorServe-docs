@@ -1,4 +1,4 @@
-### 🛠️ Settings Management
+# 🛠️ Settings Management
 
 WarriorServe® includes **modular settings components** to configure system behavior via the **WarriorServe Settings and Tools** application.
 
