@@ -13,16 +13,15 @@ William Galinat / WarriorServe
 William Galinat / WarriorServe
 
 ## Summary
-When other things touch a Contact it is firing a queueable job which is failing in some instances from other async jobs
+When Contact records are updated by asynchronous Apex processes, the Contact trigger may attempt to enqueue VeteranConfirmationStatus_Queueable, causing async execution failures.
 
 ## Business Reason
-Orgs personal development are failing due to WarriorServe code
-
+Customer and internal org automations that update Contact records must not fail due to WarriorServe attempting to start queueable work from an asynchronous execution context.
 ## Current Behavior
-There is internal flag on the class that skips only from the Veteran Confirmation Status but not because its Async
+Existing logic only skips processing for certain Veteran Confirmation Status re-entry scenarios. It does not prevent enqueue attempts when the Contact trigger executes from batch, future, queueable, or scheduled Apex.
 
 ## Requested Behavior
-The class should be aware of what called it so it auto skips
+The Contact trigger should skip enqueuing VeteranConfirmationStatus_Queueable when running in asynchronous Apex contexts to prevent nested async failures.
 
 ## Impacted Areas
 - Apex Classes
