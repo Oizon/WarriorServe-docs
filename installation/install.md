@@ -23,15 +23,6 @@ Before installing WarriorServe®, complete the following steps to ensure the pac
     - **Contact Internal**: Any except `Controlled by Parent`
     - **Contact External**: `Private`
     - **Case External**: `Private`
- 
-4. **Enable Folders and Enhanced Sharing**
-  - In Salesforce Setup:
-    - Go to: `Setup → Lightning Email Templates`
-    - Toggle On: **Folders and Enhanced Sharing**
-
-4. **Install Nonprofit Success Pack (NPSP)** (Optional)
-
-  Allows multi-phone/email per contact and more Do Not Contact Messaging
 
 ### 🚀 Installation
 
