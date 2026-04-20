@@ -15,3 +15,6 @@ This project follows:
 - None
 ### Removed
 - None
+
+### Request
+- [CR-001 Contact Trigger Prevent Queue From Async](../change-requests/CR-001-contact-trigger-prevent-queue-from-async.md)
