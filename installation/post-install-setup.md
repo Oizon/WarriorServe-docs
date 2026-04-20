@@ -1,32 +1,96 @@
-### ⚡ Setup Steps
-  - Assign WarriorServe Configuration Perm to the primary admin.
-  - Open WarriorServe Settings And Tools and Enable your desired features.
-  - Create Permission Set with Access to
-    - App
-      - WarriorServe
-    - Objects
-      - Account
-      - Case
-      - Case Referral
-      - Contact
-      - Service Record
-      - Event Log (View Only Suggested)
-  - Open each flow customize as needed Save as New Flow and Activate:
-    - AL Get Contact
-    - RT Case Referral After Save Partner Notification
-    - RT Contact After Save WWP Registration Requested
-    - RT Service Record Before Save Prevent Overlapping Dates
-    - Screen Flow Intake Guided Entry
-    - Screen Flow Partner Search and Referral Creation
-  - Make Custom Actions for Intake (Suggestion on Contact and Case)
-    - Contact => Buttons,Links, and Actions => New Action
-    - Case => Buttons,Links, and Actions => New Action
-    - Add intake button to desired page layouts
-      - Contact Page Layout
-      - Case dynamic Actions Suggested
-    - Add Refer to AWP Button to Case Dynamic Actions
-  - Make Custom Actions for Partner Search and Referral Creation (Suggestion List View Case Referral)
-    - Case => Buttons,Links, and Actions => New Action
-    - Case Referral => Buttons,Links, and Actions => New Button or Link /lightning/action/quick/Case.(Case Action Api Name)?objectApiName&context=RECORD_DETAIL&recordId={!CASESAFEID(Case.Id)}&backgroundContext=%2Flightning%2Fr%2F2FCase%2F{!CASESAFEID(Case.Id)}%2Fview
-      - List View Button
-    - Add to Case Lighting Record Page => Edit Page => Related => Case Referrals => Add Action 
+# ⚡ Post-Install Setup
+
+Complete the following steps after installing WarriorServe.
+
+---
+
+## 1. Assign Administrative Access
+
+Assign the `WarriorServe Configuration` permission set to the primary system administrator responsible for setup and maintenance.
+
+---
+
+## 2. Configure Core Settings
+
+1. Open the **WarriorServe Settings and Tools** app.
+2. Enable the features your organization plans to use.
+3. Save changes.
+
+Examples may include:
+- Enable WarriorServe
+- Enable Case Auto Create
+- Enable Event Logging
+- Enable Task Auto Create
+- Advanced integration settings
+
+---
+
+## 3. Create End User Permission Set
+
+Create a permission set for staff users and grant access as needed.
+
+### Recommended App Access
+- WarriorServe
+
+### Recommended Object Access
+- Account
+- Case
+- Case Referral
+- Contact
+- Service Record
+- Event Log *(Read Only recommended)*
+
+Adjust Create, Read, Edit, Delete, and field-level security based on your operating model.
+
+---
+
+## 4. Review and Activate Flows
+
+Review each included flow and customize as needed for your organization. If changes are required, save as a new version and activate it.
+
+### Recommended Flows to Review/Activate
+- AL Get Contact
+- RT Case Referral After Save Partner Notification
+- RT Contact After Save WWP Registration Requested
+- RT Service Record Before Save Prevent Overlapping Dates
+- Screen Flow Intake Guided Entry
+- Screen Flow Partner Search and Referral Creation
+
+---
+
+## 5. Configure Intake Quick Actions
+
+Create and place intake actions where users can easily access them.
+
+### Contact
+Setup → Object Manager → Contact → Buttons, Links, and Actions → New Action
+
+### Case
+Setup → Object Manager → Case → Buttons, Links, and Actions → New Action
+
+### Placement Recommendations
+- Add the Intake action to Contact page layouts
+- Add the Intake action to Case record pages
+- Use Dynamic Actions on Lightning pages when available
+
+### Additional Recommendation
+Add the **Refer to AWP** action to Case actions if used by your process.
+
+---
+
+## 6. Configure Partner Search and Referral Actions
+
+Create actions used for referral workflows.
+
+### Case Action
+Create a Quick Action on Case for launching referral creation.
+
+### Case Referral List View Button
+Create a custom button or link for launching the Case action from related contexts.
+
+### Lightning Record Page
+Edit the Case Lightning Record Page:
+
+Related Lists → Case Referrals → Add Action
+
+This allows users to launch referral actions directly from the related list.
