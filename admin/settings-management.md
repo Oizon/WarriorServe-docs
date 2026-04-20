@@ -2,15 +2,14 @@
 
 WarriorServe® includes **modular settings components** to configure system behavior via the **WarriorServe Settings and Tools** application.
 
-#### **Basic Settings**
+#### **General Settings**
 
 * Configured via a dedicated Lightning Web Component (`basicSettingsManager`).
 * Includes core enablement flags, such as:
 
   * Enable WarriorServe®
-  * Enable Case Auto Create
   * Enable Event Logging
-  * Enable Task Auto Create
+
 * When **Enable WarriorServe** is unchecked, all other basic settings are automatically disabled in the UI.
 * Changes are saved independently and do not impact Advanced Settings.
 
@@ -36,7 +35,3 @@ WarriorServe® includes **modular settings components** to configure system beha
   * Getting WarriorServe Support.
   * How to check your Installed Version.
   * How to rename object/fields using overrides.
-
----
-
-More features and configuration options will be appended as additional parts of the WarriorServe system are documented and implemented.
